@@ -5,10 +5,12 @@ part 'freegame.g.dart';
 
 @freezed
 class FreeGameList with _$FreeGameList {
-  const factory FreeGameList(
-      {required int id,
-      required String title,
-      required String thumbnail}) = _FreeGameList;
+  const factory FreeGameList({
+    required int id,
+    required String title,
+    required String thumbnail,
+    String? description,
+  }) = _FreeGameList;
 
   factory FreeGameList.fromJson(Map<String, dynamic> json) =>
       _$FreeGameListFromJson(json);

@@ -23,6 +23,7 @@ mixin _$FreeGameList {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +37,7 @@ abstract class $FreeGameListCopyWith<$Res> {
           FreeGameList value, $Res Function(FreeGameList) then) =
       _$FreeGameListCopyWithImpl<$Res, FreeGameList>;
   @useResult
-  $Res call({int id, String title, String thumbnail});
+  $Res call({int id, String title, String thumbnail, String? description});
 }
 
 /// @nodoc
@@ -55,6 +56,7 @@ class _$FreeGameListCopyWithImpl<$Res, $Val extends FreeGameList>
     Object? id = null,
     Object? title = null,
     Object? thumbnail = null,
+    Object? description = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -69,6 +71,10 @@ class _$FreeGameListCopyWithImpl<$Res, $Val extends FreeGameList>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
     ) as $Val);
   }
 }
@@ -81,7 +87,7 @@ abstract class _$$_FreeGameListCopyWith<$Res>
       __$$_FreeGameListCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, String thumbnail});
+  $Res call({int id, String title, String thumbnail, String? description});
 }
 
 /// @nodoc
@@ -98,6 +104,7 @@ class __$$_FreeGameListCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? thumbnail = null,
+    Object? description = freezed,
   }) {
     return _then(_$_FreeGameList(
       id: null == id
@@ -112,6 +119,10 @@ class __$$_FreeGameListCopyWithImpl<$Res>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      description: freezed == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -120,7 +131,10 @@ class __$$_FreeGameListCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FreeGameList implements _FreeGameList {
   const _$_FreeGameList(
-      {required this.id, required this.title, required this.thumbnail});
+      {required this.id,
+      required this.title,
+      required this.thumbnail,
+      this.description});
 
   factory _$_FreeGameList.fromJson(Map<String, dynamic> json) =>
       _$$_FreeGameListFromJson(json);
@@ -131,10 +145,12 @@ class _$_FreeGameList implements _FreeGameList {
   final String title;
   @override
   final String thumbnail;
+  @override
+  final String? description;
 
   @override
   String toString() {
-    return 'FreeGameList(id: $id, title: $title, thumbnail: $thumbnail)';
+    return 'FreeGameList(id: $id, title: $title, thumbnail: $thumbnail, description: $description)';
   }
 
   @override
@@ -145,12 +161,15 @@ class _$_FreeGameList implements _FreeGameList {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.thumbnail, thumbnail) ||
-                other.thumbnail == thumbnail));
+                other.thumbnail == thumbnail) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, title, thumbnail);
+  int get hashCode =>
+      Object.hash(runtimeType, id, title, thumbnail, description);
 
   @JsonKey(ignore: true)
   @override
@@ -170,7 +189,8 @@ abstract class _FreeGameList implements FreeGameList {
   const factory _FreeGameList(
       {required final int id,
       required final String title,
-      required final String thumbnail}) = _$_FreeGameList;
+      required final String thumbnail,
+      final String? description}) = _$_FreeGameList;
 
   factory _FreeGameList.fromJson(Map<String, dynamic> json) =
       _$_FreeGameList.fromJson;
@@ -181,6 +201,8 @@ abstract class _FreeGameList implements FreeGameList {
   String get title;
   @override
   String get thumbnail;
+  @override
+  String? get description;
   @override
   @JsonKey(ignore: true)
   _$$_FreeGameListCopyWith<_$_FreeGameList> get copyWith =>

@@ -11,6 +11,7 @@ _$_FreeGameList _$$_FreeGameListFromJson(Map<String, dynamic> json) =>
       id: json['id'] as int,
       title: json['title'] as String,
       thumbnail: json['thumbnail'] as String,
+      description: json['description'] as String?,
     );
 
 Map<String, dynamic> _$$_FreeGameListToJson(_$_FreeGameList instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$$_FreeGameListToJson(_$_FreeGameList instance) =>
       'id': instance.id,
       'title': instance.title,
       'thumbnail': instance.thumbnail,
+      'description': instance.description,
     };

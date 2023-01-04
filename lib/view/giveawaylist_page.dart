@@ -16,13 +16,14 @@ class GiveawayList extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+          centerTitle: true,
           backgroundColor: Colors.transparent,
           elevation: 0,
           title: Text(
             "Giveaway",
             style: GoogleFonts.sourceSansPro(),
           )),
-      backgroundColor: scaffoldbackground,
+      backgroundColor: Colors.teal,
       body: BlocBuilder<GiveawayCubit, GiveawayState>(
         builder: (context, state) {
           return state.map(loading: (_) {
@@ -47,14 +48,9 @@ class GiveawayList extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 15),
                     child: Card(
-                      color: Color(0xff312B4F),
+                      color: Colors.transparent,
                       elevation: 20,
                       child: Container(
-                        decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                                colors: [Colors.black, Colors.blue],
-                                begin: Alignment.topCenter,
-                                end: Alignment.bottomCenter)),
                         child: Padding(
                           padding: const EdgeInsets.all(10),
                           child: Center(
