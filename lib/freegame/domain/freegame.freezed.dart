@@ -14,12 +14,12 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-FreeGameList _$FreeGameListFromJson(Map<String, dynamic> json) {
-  return _FreeGameList.fromJson(json);
+FreeGames _$FreeGamesFromJson(Map<String, dynamic> json) {
+  return _FreeGames.fromJson(json);
 }
 
 /// @nodoc
-mixin _$FreeGameList {
+mixin _$FreeGames {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
@@ -27,23 +27,22 @@ mixin _$FreeGameList {
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $FreeGameListCopyWith<FreeGameList> get copyWith =>
+  $FreeGamesCopyWith<FreeGames> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $FreeGameListCopyWith<$Res> {
-  factory $FreeGameListCopyWith(
-          FreeGameList value, $Res Function(FreeGameList) then) =
-      _$FreeGameListCopyWithImpl<$Res, FreeGameList>;
+abstract class $FreeGamesCopyWith<$Res> {
+  factory $FreeGamesCopyWith(FreeGames value, $Res Function(FreeGames) then) =
+      _$FreeGamesCopyWithImpl<$Res, FreeGames>;
   @useResult
   $Res call({int id, String title, String thumbnail, String? description});
 }
 
 /// @nodoc
-class _$FreeGameListCopyWithImpl<$Res, $Val extends FreeGameList>
-    implements $FreeGameListCopyWith<$Res> {
-  _$FreeGameListCopyWithImpl(this._value, this._then);
+class _$FreeGamesCopyWithImpl<$Res, $Val extends FreeGames>
+    implements $FreeGamesCopyWith<$Res> {
+  _$FreeGamesCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -80,22 +79,21 @@ class _$FreeGameListCopyWithImpl<$Res, $Val extends FreeGameList>
 }
 
 /// @nodoc
-abstract class _$$_FreeGameListCopyWith<$Res>
-    implements $FreeGameListCopyWith<$Res> {
-  factory _$$_FreeGameListCopyWith(
-          _$_FreeGameList value, $Res Function(_$_FreeGameList) then) =
-      __$$_FreeGameListCopyWithImpl<$Res>;
+abstract class _$$_FreeGamesCopyWith<$Res> implements $FreeGamesCopyWith<$Res> {
+  factory _$$_FreeGamesCopyWith(
+          _$_FreeGames value, $Res Function(_$_FreeGames) then) =
+      __$$_FreeGamesCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({int id, String title, String thumbnail, String? description});
 }
 
 /// @nodoc
-class __$$_FreeGameListCopyWithImpl<$Res>
-    extends _$FreeGameListCopyWithImpl<$Res, _$_FreeGameList>
-    implements _$$_FreeGameListCopyWith<$Res> {
-  __$$_FreeGameListCopyWithImpl(
-      _$_FreeGameList _value, $Res Function(_$_FreeGameList) _then)
+class __$$_FreeGamesCopyWithImpl<$Res>
+    extends _$FreeGamesCopyWithImpl<$Res, _$_FreeGames>
+    implements _$$_FreeGamesCopyWith<$Res> {
+  __$$_FreeGamesCopyWithImpl(
+      _$_FreeGames _value, $Res Function(_$_FreeGames) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -106,7 +104,7 @@ class __$$_FreeGameListCopyWithImpl<$Res>
     Object? thumbnail = null,
     Object? description = freezed,
   }) {
-    return _then(_$_FreeGameList(
+    return _then(_$_FreeGames(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -129,15 +127,15 @@ class __$$_FreeGameListCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_FreeGameList implements _FreeGameList {
-  const _$_FreeGameList(
+class _$_FreeGames implements _FreeGames {
+  const _$_FreeGames(
       {required this.id,
       required this.title,
       required this.thumbnail,
       this.description});
 
-  factory _$_FreeGameList.fromJson(Map<String, dynamic> json) =>
-      _$$_FreeGameListFromJson(json);
+  factory _$_FreeGames.fromJson(Map<String, dynamic> json) =>
+      _$$_FreeGamesFromJson(json);
 
   @override
   final int id;
@@ -150,14 +148,14 @@ class _$_FreeGameList implements _FreeGameList {
 
   @override
   String toString() {
-    return 'FreeGameList(id: $id, title: $title, thumbnail: $thumbnail, description: $description)';
+    return 'FreeGames(id: $id, title: $title, thumbnail: $thumbnail, description: $description)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FreeGameList &&
+            other is _$_FreeGames &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.thumbnail, thumbnail) ||
@@ -174,26 +172,26 @@ class _$_FreeGameList implements _FreeGameList {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FreeGameListCopyWith<_$_FreeGameList> get copyWith =>
-      __$$_FreeGameListCopyWithImpl<_$_FreeGameList>(this, _$identity);
+  _$$_FreeGamesCopyWith<_$_FreeGames> get copyWith =>
+      __$$_FreeGamesCopyWithImpl<_$_FreeGames>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_FreeGameListToJson(
+    return _$$_FreeGamesToJson(
       this,
     );
   }
 }
 
-abstract class _FreeGameList implements FreeGameList {
-  const factory _FreeGameList(
+abstract class _FreeGames implements FreeGames {
+  const factory _FreeGames(
       {required final int id,
       required final String title,
       required final String thumbnail,
-      final String? description}) = _$_FreeGameList;
+      final String? description}) = _$_FreeGames;
 
-  factory _FreeGameList.fromJson(Map<String, dynamic> json) =
-      _$_FreeGameList.fromJson;
+  factory _FreeGames.fromJson(Map<String, dynamic> json) =
+      _$_FreeGames.fromJson;
 
   @override
   int get id;
@@ -205,6 +203,6 @@ abstract class _FreeGameList implements FreeGameList {
   String? get description;
   @override
   @JsonKey(ignore: true)
-  _$$_FreeGameListCopyWith<_$_FreeGameList> get copyWith =>
+  _$$_FreeGamesCopyWith<_$_FreeGames> get copyWith =>
       throw _privateConstructorUsedError;
 }

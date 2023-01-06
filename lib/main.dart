@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg/application/cubit/giveaway_by_id_cubit.dart';
 import 'package:gg/application/cubit/giveaway_cubit.dart';
+import 'package:gg/freegame/application/cubit/free_game_by_id_cubit.dart';
 import 'package:gg/freegame/application/cubit/freegamelist_cubit.dart';
 import 'package:gg/freegame/infrastructure/freegame_repository.dart';
 import 'package:gg/infrastructure/giveaway_repository.dart';
@@ -28,6 +29,9 @@ class GamesAndGiveaway extends StatelessWidget {
         ),
         BlocProvider<FreegamelistCubit>(
           create: (context) => FreegamelistCubit(FreeGameRepository()),
+        ),
+        BlocProvider<FreeGameByIdCubit>(
+          create: (context) => FreeGameByIdCubit(FreeGameRepository()),
         ),
       ],
       child: const MaterialApp(

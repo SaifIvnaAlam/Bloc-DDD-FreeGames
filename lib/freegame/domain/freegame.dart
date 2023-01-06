@@ -4,16 +4,16 @@ part 'freegame.freezed.dart';
 part 'freegame.g.dart';
 
 @freezed
-class FreeGameList with _$FreeGameList {
-  const factory FreeGameList({
+class FreeGames with _$FreeGames {
+  const factory FreeGames({
     required int id,
     required String title,
     required String thumbnail,
     String? description,
-  }) = _FreeGameList;
+  }) = _FreeGames;
 
-  factory FreeGameList.fromJson(Map<String, dynamic> json) =>
-      _$FreeGameListFromJson(json);
+  factory FreeGames.fromJson(Map<String, dynamic> json) =>
+      _$FreeGamesFromJson(json);
 
-  // factory FreeGameList.empty() => _FreeGameList();
+  // factory FreeGames.empty() => _FreeGames();
 }

@@ -1,5 +1,7 @@
 import 'package:gg/freegame/domain/freegame.dart';
 
 abstract class IFreeGameRepository {
-  Future<List<FreeGameList>> getFreeGameList();
+  Future<List<FreeGames>> getFreeGameList();
+
+  Future<FreeGames> getFreeGame(int id);
 }

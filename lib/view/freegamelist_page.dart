@@ -34,7 +34,6 @@ class FreeGameList extends StatelessWidget {
                         children: [
                           Image.network(data.thumbnail),
                           Text(data.title),
-                          Text(data.description!)
                         ],
                       ),
                     );

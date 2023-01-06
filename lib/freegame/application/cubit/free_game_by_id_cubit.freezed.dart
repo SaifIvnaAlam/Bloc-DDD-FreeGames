@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'freegamelist_cubit.dart';
+part of 'free_game_by_id_cubit.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,25 +15,25 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$FreegamelistState {
+mixin _$FreeGameByIdState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FreeGames> freeGameList) loaded,
+    required TResult Function(FreeGames freeGames) loaded,
     required TResult Function() error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FreeGames> freeGameList)? loaded,
+    TResult? Function(FreeGames freeGames)? loaded,
     TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FreeGames> freeGameList)? loaded,
+    TResult Function(FreeGames freeGames)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) =>
@@ -63,16 +63,16 @@ mixin _$FreegamelistState {
 }
 
 /// @nodoc
-abstract class $FreegamelistStateCopyWith<$Res> {
-  factory $FreegamelistStateCopyWith(
-          FreegamelistState value, $Res Function(FreegamelistState) then) =
-      _$FreegamelistStateCopyWithImpl<$Res, FreegamelistState>;
+abstract class $FreeGameByIdStateCopyWith<$Res> {
+  factory $FreeGameByIdStateCopyWith(
+          FreeGameByIdState value, $Res Function(FreeGameByIdState) then) =
+      _$FreeGameByIdStateCopyWithImpl<$Res, FreeGameByIdState>;
 }
 
 /// @nodoc
-class _$FreegamelistStateCopyWithImpl<$Res, $Val extends FreegamelistState>
-    implements $FreegamelistStateCopyWith<$Res> {
-  _$FreegamelistStateCopyWithImpl(this._value, this._then);
+class _$FreeGameByIdStateCopyWithImpl<$Res, $Val extends FreeGameByIdState>
+    implements $FreeGameByIdStateCopyWith<$Res> {
+  _$FreeGameByIdStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,7 +89,7 @@ abstract class _$$_loadingCopyWith<$Res> {
 
 /// @nodoc
 class __$$_loadingCopyWithImpl<$Res>
-    extends _$FreegamelistStateCopyWithImpl<$Res, _$_loading>
+    extends _$FreeGameByIdStateCopyWithImpl<$Res, _$_loading>
     implements _$$_loadingCopyWith<$Res> {
   __$$_loadingCopyWithImpl(_$_loading _value, $Res Function(_$_loading) _then)
       : super(_value, _then);
@@ -102,7 +102,7 @@ class _$_loading implements _loading {
 
   @override
   String toString() {
-    return 'FreegamelistState.loading()';
+    return 'FreeGameByIdState.loading()';
   }
 
   @override
@@ -118,7 +118,7 @@ class _$_loading implements _loading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FreeGames> freeGameList) loaded,
+    required TResult Function(FreeGames freeGames) loaded,
     required TResult Function() error,
   }) {
     return loading();
@@ -128,7 +128,7 @@ class _$_loading implements _loading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FreeGames> freeGameList)? loaded,
+    TResult? Function(FreeGames freeGames)? loaded,
     TResult? Function()? error,
   }) {
     return loading?.call();
@@ -138,7 +138,7 @@ class _$_loading implements _loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FreeGames> freeGameList)? loaded,
+    TResult Function(FreeGames freeGames)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -183,7 +183,7 @@ class _$_loading implements _loading {
   }
 }
 
-abstract class _loading implements FreegamelistState {
+abstract class _loading implements FreeGameByIdState {
   const factory _loading() = _$_loading;
 }
 
@@ -192,12 +192,14 @@ abstract class _$$_loadedCopyWith<$Res> {
   factory _$$_loadedCopyWith(_$_loaded value, $Res Function(_$_loaded) then) =
       __$$_loadedCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<FreeGames> freeGameList});
+  $Res call({FreeGames freeGames});
+
+  $FreeGamesCopyWith<$Res> get freeGames;
 }
 
 /// @nodoc
 class __$$_loadedCopyWithImpl<$Res>
-    extends _$FreegamelistStateCopyWithImpl<$Res, _$_loaded>
+    extends _$FreeGameByIdStateCopyWithImpl<$Res, _$_loaded>
     implements _$$_loadedCopyWith<$Res> {
   __$$_loadedCopyWithImpl(_$_loaded _value, $Res Function(_$_loaded) _then)
       : super(_value, _then);
@@ -205,34 +207,36 @@ class __$$_loadedCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? freeGameList = null,
+    Object? freeGames = null,
   }) {
     return _then(_$_loaded(
-      null == freeGameList
-          ? _value._freeGameList
-          : freeGameList // ignore: cast_nullable_to_non_nullable
-              as List<FreeGames>,
+      null == freeGames
+          ? _value.freeGames
+          : freeGames // ignore: cast_nullable_to_non_nullable
+              as FreeGames,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $FreeGamesCopyWith<$Res> get freeGames {
+    return $FreeGamesCopyWith<$Res>(_value.freeGames, (value) {
+      return _then(_value.copyWith(freeGames: value));
+    });
   }
 }
 
 /// @nodoc
 
 class _$_loaded implements _loaded {
-  const _$_loaded(final List<FreeGames> freeGameList)
-      : _freeGameList = freeGameList;
+  const _$_loaded(this.freeGames);
 
-  final List<FreeGames> _freeGameList;
   @override
-  List<FreeGames> get freeGameList {
-    if (_freeGameList is EqualUnmodifiableListView) return _freeGameList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_freeGameList);
-  }
+  final FreeGames freeGames;
 
   @override
   String toString() {
-    return 'FreegamelistState.loaded(freeGameList: $freeGameList)';
+    return 'FreeGameByIdState.loaded(freeGames: $freeGames)';
   }
 
   @override
@@ -240,13 +244,12 @@ class _$_loaded implements _loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_loaded &&
-            const DeepCollectionEquality()
-                .equals(other._freeGameList, _freeGameList));
+            (identical(other.freeGames, freeGames) ||
+                other.freeGames == freeGames));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_freeGameList));
+  int get hashCode => Object.hash(runtimeType, freeGames);
 
   @JsonKey(ignore: true)
   @override
@@ -258,32 +261,32 @@ class _$_loaded implements _loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FreeGames> freeGameList) loaded,
+    required TResult Function(FreeGames freeGames) loaded,
     required TResult Function() error,
   }) {
-    return loaded(freeGameList);
+    return loaded(freeGames);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FreeGames> freeGameList)? loaded,
+    TResult? Function(FreeGames freeGames)? loaded,
     TResult? Function()? error,
   }) {
-    return loaded?.call(freeGameList);
+    return loaded?.call(freeGames);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FreeGames> freeGameList)? loaded,
+    TResult Function(FreeGames freeGames)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(freeGameList);
+      return loaded(freeGames);
     }
     return orElse();
   }
@@ -323,10 +326,10 @@ class _$_loaded implements _loaded {
   }
 }
 
-abstract class _loaded implements FreegamelistState {
-  const factory _loaded(final List<FreeGames> freeGameList) = _$_loaded;
+abstract class _loaded implements FreeGameByIdState {
+  const factory _loaded(final FreeGames freeGames) = _$_loaded;
 
-  List<FreeGames> get freeGameList;
+  FreeGames get freeGames;
   @JsonKey(ignore: true)
   _$$_loadedCopyWith<_$_loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -340,7 +343,7 @@ abstract class _$$_errorCopyWith<$Res> {
 
 /// @nodoc
 class __$$_errorCopyWithImpl<$Res>
-    extends _$FreegamelistStateCopyWithImpl<$Res, _$_error>
+    extends _$FreeGameByIdStateCopyWithImpl<$Res, _$_error>
     implements _$$_errorCopyWith<$Res> {
   __$$_errorCopyWithImpl(_$_error _value, $Res Function(_$_error) _then)
       : super(_value, _then);
@@ -353,7 +356,7 @@ class _$_error implements _error {
 
   @override
   String toString() {
-    return 'FreegamelistState.error()';
+    return 'FreeGameByIdState.error()';
   }
 
   @override
@@ -369,7 +372,7 @@ class _$_error implements _error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<FreeGames> freeGameList) loaded,
+    required TResult Function(FreeGames freeGames) loaded,
     required TResult Function() error,
   }) {
     return error();
@@ -379,7 +382,7 @@ class _$_error implements _error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<FreeGames> freeGameList)? loaded,
+    TResult? Function(FreeGames freeGames)? loaded,
     TResult? Function()? error,
   }) {
     return error?.call();
@@ -389,7 +392,7 @@ class _$_error implements _error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<FreeGames> freeGameList)? loaded,
+    TResult Function(FreeGames freeGames)? loaded,
     TResult Function()? error,
     required TResult orElse(),
   }) {
@@ -434,6 +437,6 @@ class _$_error implements _error {
   }
 }
 
-abstract class _error implements FreegamelistState {
+abstract class _error implements FreeGameByIdState {
   const factory _error() = _$_error;
 }
