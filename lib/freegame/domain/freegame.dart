@@ -6,7 +6,7 @@ part 'freegame.g.dart';
 @freezed
 class FreeGames with _$FreeGames {
   const factory FreeGames({
-    required int id,
+    int? id,
     required String title,
     required String thumbnail,
     String? description,

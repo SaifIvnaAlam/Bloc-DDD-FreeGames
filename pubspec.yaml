@@ -43,6 +43,7 @@ dependencies:
   logger: ^1.1.0
   flutter_snake_navigationbar: ^0.6.1
   flutter_hooks: ^0.18.5+1
+  bloc: ^8.1.0
 
 dev_dependencies:
   flutter_test:

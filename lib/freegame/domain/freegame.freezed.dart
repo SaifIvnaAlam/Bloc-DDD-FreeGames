@@ -20,7 +20,7 @@ FreeGames _$FreeGamesFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$FreeGames {
-  int get id => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
   String? get description => throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ abstract class $FreeGamesCopyWith<$Res> {
   factory $FreeGamesCopyWith(FreeGames value, $Res Function(FreeGames) then) =
       _$FreeGamesCopyWithImpl<$Res, FreeGames>;
   @useResult
-  $Res call({int id, String title, String thumbnail, String? description});
+  $Res call({int? id, String title, String thumbnail, String? description});
 }
 
 /// @nodoc
@@ -52,16 +52,16 @@ class _$FreeGamesCopyWithImpl<$Res, $Val extends FreeGames>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = null,
     Object? thumbnail = null,
     Object? description = freezed,
   }) {
     return _then(_value.copyWith(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -85,7 +85,7 @@ abstract class _$$_FreeGamesCopyWith<$Res> implements $FreeGamesCopyWith<$Res> {
       __$$_FreeGamesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, String thumbnail, String? description});
+  $Res call({int? id, String title, String thumbnail, String? description});
 }
 
 /// @nodoc
@@ -99,16 +99,16 @@ class __$$_FreeGamesCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
+    Object? id = freezed,
     Object? title = null,
     Object? thumbnail = null,
     Object? description = freezed,
   }) {
     return _then(_$_FreeGames(
-      id: null == id
+      id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -129,7 +129,7 @@ class __$$_FreeGamesCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_FreeGames implements _FreeGames {
   const _$_FreeGames(
-      {required this.id,
+      {this.id,
       required this.title,
       required this.thumbnail,
       this.description});
@@ -138,7 +138,7 @@ class _$_FreeGames implements _FreeGames {
       _$$_FreeGamesFromJson(json);
 
   @override
-  final int id;
+  final int? id;
   @override
   final String title;
   @override
@@ -185,7 +185,7 @@ class _$_FreeGames implements _FreeGames {
 
 abstract class _FreeGames implements FreeGames {
   const factory _FreeGames(
-      {required final int id,
+      {final int? id,
       required final String title,
       required final String thumbnail,
       final String? description}) = _$_FreeGames;
@@ -194,7 +194,7 @@ abstract class _FreeGames implements FreeGames {
       _$_FreeGames.fromJson;
 
   @override
-  int get id;
+  int? get id;
   @override
   String get title;
   @override

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg/freegame/application/cubit/freegamelist_cubit.dart';
+import 'package:gg/view/freegamebyid_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class FreeGameList extends StatelessWidget {
   const FreeGameList({super.key});
@@ -29,12 +31,44 @@ class FreeGameList extends StatelessWidget {
                     final data = freeGameList[index];
 
                     return Center(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.network(data.thumbnail),
-                          Text(data.title),
-                        ],
+                      child: GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => FreeGameById(
+                                      freeGameId: data.id!,
+                                    )),
+                          );
+                        },
+                        child: Card(
+                          color: Colors.transparent,
+                          elevation: 20,
+                          child: Container(
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Center(
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    ClipRRect(
+                                        borderRadius: BorderRadius.circular(12),
+                                        child: Image.network(data.thumbnail)),
+                                    const SizedBox(
+                                      height: 10,
+                                    ),
+                                    Text(
+                                      data.title,
+                                      style: GoogleFonts.sourceSansPro(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
                     );
                   });

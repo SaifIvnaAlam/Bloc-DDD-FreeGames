@@ -44,9 +44,9 @@ class _HomeState extends State<Home> {
             child: PageView(
               controller: _pageController,
               onPageChanged: _onPageChanged,
-              children: <Widget>[
-                const GiveawayList(),
-                const FreeGameList(),
+              children: const <Widget>[
+                GiveawayList(),
+                FreeGameList(),
                 // const GameDealPage(),
               ],
             ),
@@ -94,22 +94,8 @@ class _HomeState extends State<Home> {
           ],
         ),
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home)),
-          BottomNavigationBarItem(icon: Icon(Icons.abc)),
-          // BottomNavigationBarItem(
-          //   icon: Container(
-          //     decoration: _selectedItemPosition == 0
-          //         ? BoxDecoration(boxShadow: [
-          //             BoxShadow(
-          //                 color: Colors.grey.shade900.withOpacity(0.3),
-          //                 blurRadius: 10.0,
-          //                 spreadRadius: 4.0),
-          //           ])
-          //         : null,
-          //     child: const FaIcon(FontAwesomeIcons.coins),
-          //   ),
-          //   label: 'Best Deals',
-          // ),
+          BottomNavigationBarItem(icon: Text("GiveAway")),
+          BottomNavigationBarItem(icon: Text("Free Games")),
         ],
         currentIndex: _selectedItemPosition,
         onTap: (index) {

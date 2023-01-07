@@ -7,7 +7,7 @@ part of 'freegame.dart';
 // **************************************************************************
 
 _$_FreeGames _$$_FreeGamesFromJson(Map<String, dynamic> json) => _$_FreeGames(
-      id: json['id'] as int,
+      id: json['id'] as int?,
       title: json['title'] as String,
       thumbnail: json['thumbnail'] as String,
       description: json['description'] as String?,

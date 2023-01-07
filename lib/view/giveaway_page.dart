@@ -16,12 +16,30 @@ class GiveAwayPage extends StatelessWidget {
           return const Center(child: CircularProgressIndicator());
         }, loaded: (value) {
           final giveaway = value.giveAway;
+          String title = giveaway.title;
+          String? description = giveaway.description!;
 
           return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Image.network(giveaway.image),
-              Text(giveaway.title),
-              Text(giveaway.description!)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration:
+                      BoxDecoration(border: Border.all(color: Colors.white)),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text("Title: $title"),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text("Description: $description")
+                    ],
+                  ),
+                ),
+              )
             ],
           );
         }, error: (value) {

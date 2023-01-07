@@ -45,33 +45,28 @@ class GiveawayList extends StatelessWidget {
                               )),
                     );
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: Card(
-                      color: Colors.transparent,
-                      elevation: 20,
-                      child: Container(
-                        child: Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Center(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                ClipRRect(
-                                    borderRadius: BorderRadius.circular(12),
-                                    child: Image.network(giveaway.thumbnail)),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Text(
-                                  giveaway.title,
-                                  style: GoogleFonts.sourceSansPro(
-                                      color: Colors.white,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ],
+                  child: Card(
+                    color: Colors.transparent,
+                    elevation: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                                borderRadius: BorderRadius.circular(12),
+                                child: Image.network(giveaway.thumbnail)),
+                            const SizedBox(
+                              height: 10,
                             ),
-                          ),
+                            Text(
+                              giveaway.title,
+                              style: GoogleFonts.sourceSansPro(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
                         ),
                       ),
                     ),
