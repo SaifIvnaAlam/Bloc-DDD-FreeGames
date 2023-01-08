@@ -23,7 +23,22 @@ mixin _$FreeGames {
   int? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get thumbnail => throw _privateConstructorUsedError;
+  @JsonKey(name: 'short_description', defaultValue: 'N/A')
+  String? get shortDescription => throw _privateConstructorUsedError;
+  @JsonKey(defaultValue: 'N/A')
   String? get description => throw _privateConstructorUsedError;
+  @JsonKey(name: 'game_url', defaultValue: 'N/A')
+  String? get gameUrl => throw _privateConstructorUsedError;
+  @JsonKey(defaultValue: 'N/A')
+  String? get genre => throw _privateConstructorUsedError;
+  @JsonKey(defaultValue: 'N/A')
+  String? get platform => throw _privateConstructorUsedError;
+  @JsonKey(defaultValue: 'N/A')
+  String? get publisher => throw _privateConstructorUsedError;
+  @JsonKey(defaultValue: 'N/A')
+  String? get developer => throw _privateConstructorUsedError;
+  @JsonKey(name: 'release_date')
+  DateTime? get releaseDate => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +51,26 @@ abstract class $FreeGamesCopyWith<$Res> {
   factory $FreeGamesCopyWith(FreeGames value, $Res Function(FreeGames) then) =
       _$FreeGamesCopyWithImpl<$Res, FreeGames>;
   @useResult
-  $Res call({int? id, String title, String thumbnail, String? description});
+  $Res call(
+      {int? id,
+      String title,
+      String thumbnail,
+      @JsonKey(name: 'short_description', defaultValue: 'N/A')
+          String? shortDescription,
+      @JsonKey(defaultValue: 'N/A')
+          String? description,
+      @JsonKey(name: 'game_url', defaultValue: 'N/A')
+          String? gameUrl,
+      @JsonKey(defaultValue: 'N/A')
+          String? genre,
+      @JsonKey(defaultValue: 'N/A')
+          String? platform,
+      @JsonKey(defaultValue: 'N/A')
+          String? publisher,
+      @JsonKey(defaultValue: 'N/A')
+          String? developer,
+      @JsonKey(name: 'release_date')
+          DateTime? releaseDate});
 }
 
 /// @nodoc
@@ -55,7 +89,14 @@ class _$FreeGamesCopyWithImpl<$Res, $Val extends FreeGames>
     Object? id = freezed,
     Object? title = null,
     Object? thumbnail = null,
+    Object? shortDescription = freezed,
     Object? description = freezed,
+    Object? gameUrl = freezed,
+    Object? genre = freezed,
+    Object? platform = freezed,
+    Object? publisher = freezed,
+    Object? developer = freezed,
+    Object? releaseDate = freezed,
   }) {
     return _then(_value.copyWith(
       id: freezed == id
@@ -70,10 +111,38 @@ class _$FreeGamesCopyWithImpl<$Res, $Val extends FreeGames>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      shortDescription: freezed == shortDescription
+          ? _value.shortDescription
+          : shortDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      gameUrl: freezed == gameUrl
+          ? _value.gameUrl
+          : gameUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genre: freezed == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String?,
+      platform: freezed == platform
+          ? _value.platform
+          : platform // ignore: cast_nullable_to_non_nullable
+              as String?,
+      publisher: freezed == publisher
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String?,
+      developer: freezed == developer
+          ? _value.developer
+          : developer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      releaseDate: freezed == releaseDate
+          ? _value.releaseDate
+          : releaseDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ) as $Val);
   }
 }
@@ -85,7 +154,26 @@ abstract class _$$_FreeGamesCopyWith<$Res> implements $FreeGamesCopyWith<$Res> {
       __$$_FreeGamesCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String title, String thumbnail, String? description});
+  $Res call(
+      {int? id,
+      String title,
+      String thumbnail,
+      @JsonKey(name: 'short_description', defaultValue: 'N/A')
+          String? shortDescription,
+      @JsonKey(defaultValue: 'N/A')
+          String? description,
+      @JsonKey(name: 'game_url', defaultValue: 'N/A')
+          String? gameUrl,
+      @JsonKey(defaultValue: 'N/A')
+          String? genre,
+      @JsonKey(defaultValue: 'N/A')
+          String? platform,
+      @JsonKey(defaultValue: 'N/A')
+          String? publisher,
+      @JsonKey(defaultValue: 'N/A')
+          String? developer,
+      @JsonKey(name: 'release_date')
+          DateTime? releaseDate});
 }
 
 /// @nodoc
@@ -102,7 +190,14 @@ class __$$_FreeGamesCopyWithImpl<$Res>
     Object? id = freezed,
     Object? title = null,
     Object? thumbnail = null,
+    Object? shortDescription = freezed,
     Object? description = freezed,
+    Object? gameUrl = freezed,
+    Object? genre = freezed,
+    Object? platform = freezed,
+    Object? publisher = freezed,
+    Object? developer = freezed,
+    Object? releaseDate = freezed,
   }) {
     return _then(_$_FreeGames(
       id: freezed == id
@@ -117,10 +212,38 @@ class __$$_FreeGamesCopyWithImpl<$Res>
           ? _value.thumbnail
           : thumbnail // ignore: cast_nullable_to_non_nullable
               as String,
+      shortDescription: freezed == shortDescription
+          ? _value.shortDescription
+          : shortDescription // ignore: cast_nullable_to_non_nullable
+              as String?,
       description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
               as String?,
+      gameUrl: freezed == gameUrl
+          ? _value.gameUrl
+          : gameUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      genre: freezed == genre
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String?,
+      platform: freezed == platform
+          ? _value.platform
+          : platform // ignore: cast_nullable_to_non_nullable
+              as String?,
+      publisher: freezed == publisher
+          ? _value.publisher
+          : publisher // ignore: cast_nullable_to_non_nullable
+              as String?,
+      developer: freezed == developer
+          ? _value.developer
+          : developer // ignore: cast_nullable_to_non_nullable
+              as String?,
+      releaseDate: freezed == releaseDate
+          ? _value.releaseDate
+          : releaseDate // ignore: cast_nullable_to_non_nullable
+              as DateTime?,
     ));
   }
 }
@@ -132,7 +255,22 @@ class _$_FreeGames implements _FreeGames {
       {this.id,
       required this.title,
       required this.thumbnail,
-      this.description});
+      @JsonKey(name: 'short_description', defaultValue: 'N/A')
+          this.shortDescription,
+      @JsonKey(defaultValue: 'N/A')
+          this.description,
+      @JsonKey(name: 'game_url', defaultValue: 'N/A')
+          this.gameUrl,
+      @JsonKey(defaultValue: 'N/A')
+          this.genre,
+      @JsonKey(defaultValue: 'N/A')
+          this.platform,
+      @JsonKey(defaultValue: 'N/A')
+          this.publisher,
+      @JsonKey(defaultValue: 'N/A')
+          this.developer,
+      @JsonKey(name: 'release_date')
+          this.releaseDate});
 
   factory _$_FreeGames.fromJson(Map<String, dynamic> json) =>
       _$$_FreeGamesFromJson(json);
@@ -144,11 +282,33 @@ class _$_FreeGames implements _FreeGames {
   @override
   final String thumbnail;
   @override
+  @JsonKey(name: 'short_description', defaultValue: 'N/A')
+  final String? shortDescription;
+  @override
+  @JsonKey(defaultValue: 'N/A')
   final String? description;
+  @override
+  @JsonKey(name: 'game_url', defaultValue: 'N/A')
+  final String? gameUrl;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  final String? genre;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  final String? platform;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  final String? publisher;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  final String? developer;
+  @override
+  @JsonKey(name: 'release_date')
+  final DateTime? releaseDate;
 
   @override
   String toString() {
-    return 'FreeGames(id: $id, title: $title, thumbnail: $thumbnail, description: $description)';
+    return 'FreeGames(id: $id, title: $title, thumbnail: $thumbnail, shortDescription: $shortDescription, description: $description, gameUrl: $gameUrl, genre: $genre, platform: $platform, publisher: $publisher, developer: $developer, releaseDate: $releaseDate)';
   }
 
   @override
@@ -160,14 +320,37 @@ class _$_FreeGames implements _FreeGames {
             (identical(other.title, title) || other.title == title) &&
             (identical(other.thumbnail, thumbnail) ||
                 other.thumbnail == thumbnail) &&
+            (identical(other.shortDescription, shortDescription) ||
+                other.shortDescription == shortDescription) &&
             (identical(other.description, description) ||
-                other.description == description));
+                other.description == description) &&
+            (identical(other.gameUrl, gameUrl) || other.gameUrl == gameUrl) &&
+            (identical(other.genre, genre) || other.genre == genre) &&
+            (identical(other.platform, platform) ||
+                other.platform == platform) &&
+            (identical(other.publisher, publisher) ||
+                other.publisher == publisher) &&
+            (identical(other.developer, developer) ||
+                other.developer == developer) &&
+            (identical(other.releaseDate, releaseDate) ||
+                other.releaseDate == releaseDate));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, id, title, thumbnail, description);
+  int get hashCode => Object.hash(
+      runtimeType,
+      id,
+      title,
+      thumbnail,
+      shortDescription,
+      description,
+      gameUrl,
+      genre,
+      platform,
+      publisher,
+      developer,
+      releaseDate);
 
   @JsonKey(ignore: true)
   @override
@@ -188,7 +371,22 @@ abstract class _FreeGames implements FreeGames {
       {final int? id,
       required final String title,
       required final String thumbnail,
-      final String? description}) = _$_FreeGames;
+      @JsonKey(name: 'short_description', defaultValue: 'N/A')
+          final String? shortDescription,
+      @JsonKey(defaultValue: 'N/A')
+          final String? description,
+      @JsonKey(name: 'game_url', defaultValue: 'N/A')
+          final String? gameUrl,
+      @JsonKey(defaultValue: 'N/A')
+          final String? genre,
+      @JsonKey(defaultValue: 'N/A')
+          final String? platform,
+      @JsonKey(defaultValue: 'N/A')
+          final String? publisher,
+      @JsonKey(defaultValue: 'N/A')
+          final String? developer,
+      @JsonKey(name: 'release_date')
+          final DateTime? releaseDate}) = _$_FreeGames;
 
   factory _FreeGames.fromJson(Map<String, dynamic> json) =
       _$_FreeGames.fromJson;
@@ -200,7 +398,29 @@ abstract class _FreeGames implements FreeGames {
   @override
   String get thumbnail;
   @override
+  @JsonKey(name: 'short_description', defaultValue: 'N/A')
+  String? get shortDescription;
+  @override
+  @JsonKey(defaultValue: 'N/A')
   String? get description;
+  @override
+  @JsonKey(name: 'game_url', defaultValue: 'N/A')
+  String? get gameUrl;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  String? get genre;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  String? get platform;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  String? get publisher;
+  @override
+  @JsonKey(defaultValue: 'N/A')
+  String? get developer;
+  @override
+  @JsonKey(name: 'release_date')
+  DateTime? get releaseDate;
   @override
   @JsonKey(ignore: true)
   _$$_FreeGamesCopyWith<_$_FreeGames> get copyWith =>

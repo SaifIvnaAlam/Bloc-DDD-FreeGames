@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:flutter_snake_navigationbar/flutter_snake_navigationbar.dart';
 import 'package:gg/application/cubit/giveaway_cubit.dart';
-import 'package:gg/const.dart';
 import 'package:gg/view/giveaway_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg/freegame/application/cubit/freegamelist_cubit.dart';
+import 'package:gg/view/component/game_card.dart';
+import 'package:gg/view/component/thumbnail_preview.dart';
 import 'package:gg/view/freegamebyid_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,72 +14,44 @@ class FreeGameList extends StatelessWidget {
     context.read<FreegamelistCubit>().getFreeGameList();
     return Scaffold(
         backgroundColor: Colors.teal,
-        appBar: AppBar(
-            centerTitle: true,
-            elevation: 0,
-            backgroundColor: Colors.teal,
-            title: const Text("FreeGames")),
-        body: BlocBuilder<FreegamelistCubit, FreegamelistState>(
-          builder: (context, state) {
-            return state.map(loading: (_) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            }, loaded: (value) {
-              var freeGameList = value.freeGameList;
-              return ListView.builder(
+        body: NestedScrollView(
+          headerSliverBuilder: (context, innerBoxIsScrolled) => [
+            const SliverAppBar(
+              backgroundColor: Colors.transparent,
+              centerTitle: true,
+              title: Text("Free Games"),
+            )
+          ],
+          body: BlocBuilder<FreegamelistCubit, FreegamelistState>(
+            builder: (context, state) {
+              return state.map(loading: (_) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }, loaded: (value) {
+                var freeGameList = value.freeGameList;
+                return ListView.builder(
+                  key: const PageStorageKey('free-games-list'),
                   itemCount: freeGameList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    final data = freeGameList[index];
-
-                    return Center(
-                      child: GestureDetector(
-                        onTap: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => FreeGameById(
-                                      freeGameId: data.id!,
-                                    )),
-                          );
-                        },
-                        child: Card(
-                          color: Colors.transparent,
-                          elevation: 20,
-                          child: Container(
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Center(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    ClipRRect(
-                                        borderRadius: BorderRadius.circular(12),
-                                        child: Image.network(data.thumbnail)),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    Text(
-                                      data.title,
-                                      style: GoogleFonts.sourceSansPro(
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
+                  padding: const EdgeInsets.only(top: 16),
+                  itemBuilder: (context, index) {
+                    final game = freeGameList[index];
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16),
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GameCard(game: game),
                       ),
                     );
-                  });
-            }, error: (value) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            });
-          },
+                  },
+                );
+              }, error: (value) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              });
+            },
+          ),
         ));
   }
 }
