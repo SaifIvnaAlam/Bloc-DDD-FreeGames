@@ -22,6 +22,7 @@ class GameCard extends StatelessWidget {
         children: [
           ThumbnailPreview(
             imageUrl: game.thumbnail,
+            game: game,
           ),
           Flexible(
             child: Padding(

@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:gg/freegame/domain/freegame.dart';
+import 'package:gg/view/freegamebyid_page.dart';
 
 class ThumbnailPreview extends StatelessWidget {
   final String imageUrl;
+  final FreeGames game;
   const ThumbnailPreview({
     Key? key,
     required this.imageUrl,
+    required this.game,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -45,9 +49,11 @@ class ThumbnailPreview extends StatelessWidget {
             child: InkWell(
               borderRadius: BorderRadius.circular(16),
               onTap: () {
-                // Navigator.of(context).push(MaterialPageRoute(
-                //   builder: (context) => FreeGameDetailsPage(id: game.id),
-                // ),);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => FreeGameById(freeGameId: game.id!),
+                  ),
+                );
               },
             ),
           ),

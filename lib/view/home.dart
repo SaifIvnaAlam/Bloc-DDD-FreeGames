@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
         ],
       ),
       bottomNavigationBar: SnakeNavigationBar.color(
-        snakeViewColor: Theme.of(context).colorScheme.secondary,
+        snakeViewColor: Color(0xff2C74B3),
         behaviour: SnakeBarBehaviour.floating,
         snakeShape: SnakeShape.rectangle,
         padding: const EdgeInsets.all(16),
