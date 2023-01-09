@@ -1,12 +1,11 @@
-<p align="center">
+# Free Games and Giveaway
 
-  <h3 align="center">Free Games And Giveaways</h3>
-  </p>
+Free Games and Giveaway is Flutter based application Where user can
 
-Free Games and Giveaway is Flutter based application Where user can Get all the latest 
-## Getting Started
+- [Flutter](https://flutter.dev/)
+- [Dart](https://dart.dev/)
 
-This project is a starting point for a Flutter application.
+<!-- ROADMAP -->This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 

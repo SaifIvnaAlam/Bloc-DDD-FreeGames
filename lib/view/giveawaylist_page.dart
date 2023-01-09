@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg/application/cubit/giveaway_cubit.dart';
 import 'package:gg/view/component/giveaway_game_card.dart';
-import 'package:gg/view/giveaway_page.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class GiveawayList extends StatelessWidget {
   const GiveawayList({super.key});
@@ -13,7 +11,7 @@ class GiveawayList extends StatelessWidget {
     context.read<GiveawayCubit>().getGiveAway();
 
     return Scaffold(
-      backgroundColor: Color(0xff3A4F7A),
+      backgroundColor: const Color(0xff3A4F7A),
       body: NestedScrollView(
         headerSliverBuilder: (context, innerBoxIsScrolled) => [
           SliverAppBar(
