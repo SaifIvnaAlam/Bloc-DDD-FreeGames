@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:gg/domain/giveaway.dart';
-import 'package:gg/view/freegamebyid_page.dart';
 import 'package:gg/view/giveaway_page.dart';
 
 class GiveAwayGameCard extends StatelessWidget {

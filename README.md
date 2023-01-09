@@ -1,7 +1,9 @@
-# gg
+<p align="center">
 
-A new Flutter project.
+  <h3 align="center">Free Games And Giveaways</h3>
+  </p>
 
+Free Games and Giveaway is Flutter based application Where user can Get all the latest 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
