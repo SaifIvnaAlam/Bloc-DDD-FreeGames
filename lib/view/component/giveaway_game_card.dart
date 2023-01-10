@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:gg/domain/giveaway.dart';
 import 'package:gg/view/giveaway_page.dart';
@@ -48,8 +49,15 @@ class GiveAwayGameCard extends StatelessWidget {
                           ),
                           child: SizedBox(
                               width: double.infinity,
-                              child: Image.network(
-                                game.thumbnail,
+                              child: CachedNetworkImage(
+                                imageUrl: game.thumbnail,
+                                placeholder: (context, url) => const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                                errorWidget: (context, url, error) => Container(
+                                  color: Colors.black,
+                                  child: const Text("Error Loading the Image"),
+                                ),
                                 fit: BoxFit.contain,
                                 alignment: Alignment.center,
                               )),
