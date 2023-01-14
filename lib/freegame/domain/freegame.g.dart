@@ -20,6 +20,7 @@ _$_FreeGames _$$_FreeGamesFromJson(Map<String, dynamic> json) => _$_FreeGames(
       releaseDate: json['release_date'] == null
           ? null
           : DateTime.parse(json['release_date'] as String),
+      freetogameProfileUrl: json['freetogame_profile_url'] as String? ?? 'N/A',
     );
 
 Map<String, dynamic> _$$_FreeGamesToJson(_$_FreeGames instance) =>
@@ -35,4 +36,5 @@ Map<String, dynamic> _$$_FreeGamesToJson(_$_FreeGames instance) =>
       'publisher': instance.publisher,
       'developer': instance.developer,
       'release_date': instance.releaseDate?.toIso8601String(),
+      'freetogame_profile_url': instance.freetogameProfileUrl,
     };

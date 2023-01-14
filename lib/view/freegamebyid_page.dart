@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg/freegame/application/cubit/free_game_by_id_cubit.dart';
+import 'package:gg/view/component/primary_button.dart';
 
 class FreeGameById extends StatelessWidget {
   final int freeGameId;
@@ -11,6 +12,7 @@ class FreeGameById extends StatelessWidget {
     context.read<FreeGameByIdCubit>().getFreeGameById(freeGameId);
 
     return Scaffold(
+      backgroundColor: const Color(0xff3A4F7A),
       body: BlocBuilder<FreeGameByIdCubit, FreeGameByIdState>(
         builder: (context, state) {
           return state.map(
@@ -22,11 +24,51 @@ class FreeGameById extends StatelessWidget {
             loaded: (value) {
               var freeGame = value.freeGames;
               return Center(
-                child: Column(
-                  children: [
-                    Image.network(freeGame.thumbnail),
-                    Text(freeGame.title)
-                  ],
+                child: SafeArea(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      SizedBox(
+                          width: double.infinity,
+                          child: Image.network(
+                            freeGame.thumbnail,
+                            fit: BoxFit.contain,
+                            alignment: Alignment.center,
+                          )),
+                      const SizedBox(height: 20),
+                      Container(
+                        color: Colors.black12,
+                        height: 200,
+                        width: double.infinity,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Text(
+                                  freeGame.title,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.amberAccent),
+                                ),
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.only(left: 10, right: 10),
+                                child: Text(freeGame.description!),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      PrimaryButton(text: "Get game", onTap: () {})
+                    ],
+                  ),
                 ),
               );
             },

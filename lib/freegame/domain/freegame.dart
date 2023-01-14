@@ -27,6 +27,8 @@ class FreeGames with _$FreeGames {
       name: 'release_date',
     )
         DateTime? releaseDate,
+    @JsonKey(name: 'freetogame_profile_url', defaultValue: 'N/A')
+        String? freetogameProfileUrl,
   }) = _FreeGames;
 
   factory FreeGames.fromJson(Map<String, dynamic> json) =>

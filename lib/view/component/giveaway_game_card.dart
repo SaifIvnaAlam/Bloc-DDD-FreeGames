@@ -49,17 +49,10 @@ class GiveAwayGameCard extends StatelessWidget {
                           ),
                           child: SizedBox(
                               width: double.infinity,
-                              child: CachedNetworkImage(
-                                imageUrl: game.thumbnail,
-                                placeholder: (context, url) => const Center(
-                                  child: CircularProgressIndicator(),
-                                ),
-                                errorWidget: (context, url, error) => Container(
-                                  color: Colors.black,
-                                  child: const Text("Error Loading the Image"),
-                                ),
-                                fit: BoxFit.contain,
+                              child: Image.network(
+                                game.thumbnail,
                                 alignment: Alignment.center,
+                                fit: BoxFit.contain,
                               )),
                         ),
                         Padding(
