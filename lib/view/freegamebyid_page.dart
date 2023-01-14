@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gg/freegame/application/cubit/free_game_by_id_cubit.dart';
 import 'package:gg/view/component/primary_button.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class FreeGameById extends StatelessWidget {
   final int freeGameId;
@@ -41,7 +42,7 @@ class FreeGameById extends StatelessWidget {
                       const SizedBox(height: 20),
                       Container(
                         color: Colors.black12,
-                        height: 200,
+                        height: 300,
                         width: double.infinity,
                         child: SingleChildScrollView(
                           child: Column(
@@ -56,6 +57,9 @@ class FreeGameById extends StatelessWidget {
                                       color: Colors.amberAccent),
                                 ),
                               ),
+                              const SizedBox(
+                                height: 10,
+                              ),
                               Padding(
                                 padding:
                                     const EdgeInsets.only(left: 10, right: 10),
@@ -65,8 +69,20 @@ class FreeGameById extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Spacer(),
-                      PrimaryButton(text: "Get game", onTap: () {})
+                      SizedBox(
+                        height: 20,
+                      ),
+                      PrimaryButton(
+                          onTap: () async {
+                            String url = freeGame.gameUrl!;
+                            final uri = Uri.parse(url);
+                            if (await canLaunchUrl(uri)) {
+                              await launchUrl(uri);
+                            } else {
+                              throw 'Could not launch $url';
+                            }
+                          },
+                          text: "Get Game"),
                     ],
                   ),
                 ),

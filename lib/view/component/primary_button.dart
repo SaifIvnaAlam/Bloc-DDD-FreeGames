@@ -2,61 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrimaryButton extends StatelessWidget {
-  const PrimaryButton({
-    Key? key,
-    required this.text,
-    this.type = ButtonType.primary,
-    this.isLoading = false,
-    required this.onTap,
-  }) : super(key: key);
+  const PrimaryButton({super.key, required this.onTap, required this.text});
 
-  final String text;
-  final ButtonType type;
   final VoidCallback onTap;
-  final bool isLoading;
-
+  final String text;
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      borderRadius: BorderRadius.circular(40.r),
-      onTap: onTap,
-      child: Ink(
-        decoration: BoxDecoration(
-          color: Colors.amber,
-          borderRadius: BorderRadius.circular(40.r),
-          border: type == ButtonType.primary
-              ? null
-              : Border.all(
-                  color: Theme.of(context).colorScheme.secondary,
-                  width: 2.w,
-                ),
-        ),
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.symmetric(vertical: 24.h),
-            child: isLoading
-                ? const SizedBox(
-                    height: 10,
-                    width: 10,
-                    child: CircularProgressIndicator(
-                      color: Colors.white,
-                    ),
-                  )
-                : Text(
-                    text,
-                    style: TextStyle(
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.w700,
-                      color: type == ButtonType.primary
-                          ? Colors.white
-                          : Theme.of(context).colorScheme.secondary,
-                    ),
-                  ),
-          ),
-        ),
-      ),
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: ClipRRect(
+          borderRadius: BorderRadius.circular(50),
+          child: ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: const Size(double.infinity, 50),
+              maximumSize: const Size(double.infinity, 50),
+            ),
+            onPressed: () {
+              onTap;
+            },
+            child: Text(
+              text,
+            ),
+          )),
     );
   }
 }
-
-enum ButtonType { primary, secondary }
