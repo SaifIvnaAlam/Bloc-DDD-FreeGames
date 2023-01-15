@@ -91,15 +91,15 @@ class GameCard extends StatelessWidget {
             color: const Color.fromARGB(255, 50, 191, 216),
             borderRadius: BorderRadius.circular(3),
           ),
-          child: const Padding(
-            padding: EdgeInsets.symmetric(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
               horizontal: 2,
               vertical: 2,
             ),
             child: Center(
               child: Text(
-                "patform",
-                style: TextStyle(fontSize: 12),
+                game.platform!,
+                style: const TextStyle(fontSize: 12),
               ),
             ),
           ),
